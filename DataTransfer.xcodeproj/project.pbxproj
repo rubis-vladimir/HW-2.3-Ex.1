@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D7F70C3265CEC950081E96F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7F70C2265CEC950081E96F /* SecondViewController.swift */; };
 		7DA41F2D265C489500B3348F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA41F2C265C489500B3348F /* AppDelegate.swift */; };
 		7DA41F2F265C489500B3348F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA41F2E265C489500B3348F /* SceneDelegate.swift */; };
 		7DA41F31265C489500B3348F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA41F30265C489500B3348F /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D7F70C2265CEC950081E96F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7DA41F29265C489500B3348F /* DataTransfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTransfer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA41F2C265C489500B3348F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DA41F2E265C489500B3348F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				7DA41F2C265C489500B3348F /* AppDelegate.swift */,
 				7DA41F2E265C489500B3348F /* SceneDelegate.swift */,
 				7DA41F30265C489500B3348F /* ViewController.swift */,
+				7D7F70C2265CEC950081E96F /* SecondViewController.swift */,
 				7DA41F32265C489500B3348F /* Main.storyboard */,
 				7DA41F35265C489600B3348F /* Assets.xcassets */,
 				7DA41F37265C489600B3348F /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D7F70C3265CEC950081E96F /* SecondViewController.swift in Sources */,
 				7DA41F31265C489500B3348F /* ViewController.swift in Sources */,
 				7DA41F2D265C489500B3348F /* AppDelegate.swift in Sources */,
 				7DA41F2F265C489500B3348F /* SceneDelegate.swift in Sources */,
@@ -288,6 +292,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DataTransfer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +311,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DataTransfer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
