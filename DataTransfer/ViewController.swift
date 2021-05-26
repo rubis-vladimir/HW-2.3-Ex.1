@@ -7,7 +7,7 @@
 
 import UIKit
 
-let user = [(username: "User", password: "Password"), (username: "Vladimir", password: "1234")]
+private let user = [(username: "User", password: "Password"), (username: "Vladimir", password: "1234"), (username: "Anastasia", password: "Admin")]
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -43,28 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func logInTapped(_ sender: UIButton) {
-        
-        guard userName.text?.isEmpty == false && password.text?.isEmpty == false
-        else { return }
-        if let _ = Double(userName.text!) {
-            let alert = UIAlertController(title: "Wrong format", message: "Please enter your Name", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            for i in 0..<user.count {
-                if userName.text == user[i].username && password.text == user[i].password {
-                    performSegue(withIdentifier: "detailSegue", sender: nil)
-                    userName.text = nil
-                    password.text = nil
-                    break
-                }
-            }
-            let alert = UIAlertController(title: "Invalid login or password", message: "Please, enter correct login or password", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
-        }
+        checkUserData()
     }
     
     @IBAction func forgotUserNameTapped(_ sender: UIButton) {
@@ -106,41 +85,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private func checkUserData() {
+        guard userName.text?.isEmpty == false && password.text?.isEmpty == false
+        else { return }
+        if let _ = Double(userName.text!) {
+            let alert = UIAlertController(title: "Wrong format", message: "Please enter your Name", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            for i in 0..<user.count {
+                if userName.text == user[i].username && password.text == user[i].password {
+                    performSegue(withIdentifier: "detailSegue", sender: nil)
+                    userName.text = nil
+                    password.text = nil
+                    break
+                }
+            }
+            let alert = UIAlertController(title: "Invalid login or password", message: "Please, enter correct login or password", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case userName:
-            performSegue(withIdentifier: "detailSegue", sender: nil)
+            password.becomeFirstResponder()
         case password:
-            performSegue(withIdentifier: "detailSegue", sender: nil)
+            checkUserData()
         default:
         return true
         }
-        
         return true
     }
 }
 
-//class AddPostVC: UIViewController {
-//
-//    @IBOutlet var textView: UITextView!
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        textView.returnKeyType = .done
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
-//
-//
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        if text == "\n" {
-//            textView.resignFirstResponder()
-//            navigationController?.popViewController(animated: true)
-//            return false
-//        }
-//
-//        return true
-//    }
-//
-//}
